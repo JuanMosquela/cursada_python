@@ -30,6 +30,8 @@ class Persona:
 
     # usamos @property para establecer un getter, d esta forma podemos acceder a la varaible como si fuera un atributo en vez de como un metodo
 
+    # IMPORTANTE: @property ( getter ) debe ir primero para darle nombre a la propiedad, sino @nombre.setter no va a saber lo que es "nombre"
+
     @property
     def nombre(self):
         return self.__nombre
