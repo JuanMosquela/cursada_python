@@ -34,6 +34,10 @@ class Persona:
     def nombre(self):
         return self.__nombre
 
+    @nombre.setter
+    def nombre(self, value: str):
+        self.__nombre = value.capitalize()
+
 
 # Ahora podemos crear todos los objetos que queramos reutilizando el mismo molde
 persona1 = Persona(1, "Juan", "Mosquella", 27)
@@ -50,4 +54,7 @@ print(persona1.presentarse())
 persona1.__edad = 21
 
 print(persona1.get_edad())
+
+# con las variantes de property podemos establecer y obtener los valores de una variable de forma que parezcan propiedades, cuando en realidad son objetos. Es simplemente otra forma para no usar get o set
+persona1.nombre = "Marcos"
 print(persona1.nombre)
