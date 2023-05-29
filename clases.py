@@ -53,8 +53,10 @@ print(persona1.presentarse())
 
 persona1.__edad = 21
 
-print(persona1.get_edad())
+print(persona1.get_edad())  # imprime 27
+
 
 # con las variantes de property podemos establecer y obtener los valores de una variable de forma que parezcan propiedades, cuando en realidad son objetos. Es simplemente otra forma para no usar get o set
+
 persona1.nombre = "Marcos"
 print(persona1.nombre)
