@@ -11,7 +11,7 @@ class Persona:
         # usamos self.id para crear una propiedad id que solamente va a pertenecer a esta clase, y le asignamos el id que nos llega por parametro
 
         self.id = id
-        self.nombre = nombre
+        self.__nombre = nombre
         self.apellido = apellido
         self.__edad = edad
 
@@ -19,7 +19,7 @@ class Persona:
     # importante usar self para apuntar a la variable del objecto donde estamos parados
 
     def presentarse(self):
-        print(f"Hola, mi nombre es {self.nombre}")
+        print(f"Hola, mi nombre es {self.__nombre}")
 
     def set_edad(self, value):
         if value > 0 and value < 100:
@@ -28,10 +28,14 @@ class Persona:
     def get_edad(self):
         return self.__edad
 
+    # usamos @property para establecer un getter, d esta forma podemos acceder a la varaible como si fuera un atributo en vez de como un metodo
+
+    @property
+    def nombre(self):
+        return self.__nombre
+
 
 # Ahora podemos crear todos los objetos que queramos reutilizando el mismo molde
-
-
 persona1 = Persona(1, "Juan", "Mosquella", 27)
 persona2 = Persona(2, "Pablo", "Luchetti", 22)
 
@@ -46,3 +50,4 @@ print(persona1.presentarse())
 persona1.__edad = 21
 
 print(persona1.get_edad())
+print(persona1.nombre)
